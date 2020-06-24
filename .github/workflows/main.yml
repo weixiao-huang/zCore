@@ -123,3 +123,31 @@ jobs:
           cd scripts
           pip3 install pexpect
           python3 core-tests.py
+
+  libc-test:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Checkout submodules
+        shell: bash
+        run: |
+          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+          git submodule sync --recursive
+          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: nightly-2020-06-04
+          components: rust-src
+      - name: Prepare rootfs
+        run: make rootfs
+      - name: Add libc-test
+        run: |
+          cd scripts/linux
+          sh add-libctest.sh
+          cd ../../
+      - name: Run libc-tests
+        run: |
+          pip3 install pexpect
+          cargo build --release -p linux-loader
+          python3 libc-tests.py
