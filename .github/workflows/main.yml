@@ -149,9 +149,11 @@ jobs:
           cd scripts/linux
           sh add-libctest.sh
           cd ../../
-      - name: Run libc-tests
+      - name: Build libc-test
         run: |
           pip3 install pexpect
           cargo build --release -p linux-loader
+      - name: Run libc-test
+        run: |
           python3 libc-tests.py
           cat scripts/linux/test-result.txt
