@@ -161,7 +161,7 @@ jobs:
         run: |
           pwd
           pip3 install pexpect
-          cargo run --release -p linux-loader /libc-tests/libc-test/src/functional/arbuildgv.exe
+          cargo run --release -p linux-loader /libc-tests/libc-test/src/functional/argv.exe
       - name: Run libc-test
         run: |
           pwd
