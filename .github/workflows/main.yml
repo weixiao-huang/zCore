@@ -140,7 +140,9 @@ jobs:
           toolchain: nightly-2020-06-04
           components: rust-src
       - name: Prepare rootfs
-        run: make rootfs
+        run: |
+          pwd
+          make rootfs
       - name: Prepare Requirement
         run: |
           sudo apt-get install musl-tools musl-dev -y
@@ -148,15 +150,20 @@ jobs:
         run: |
           pwd
           cd scripts/linux
+          pwd
           sh add-libctest.sh
+          pwd
           cd ..
+          pwd
           cd ..
+          pwd
       - name: Build libc-test
         run: |
           pwd
           pip3 install pexpect
-          cargo build --release -p linux-loader
+          cargo run --release -p linux-loader /libc-tests/libc-test/src/functional/arbuildgv.exe
       - name: Run libc-test
         run: |
+          pwd
           python3 libc-tests.py
           cat scripts/linux/test-result.txt
