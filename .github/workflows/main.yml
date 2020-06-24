@@ -146,6 +146,7 @@ jobs:
           sudo apt-get install musl-tools musl-dev -y
       - name: Add libc-test
         run: |
+          pwd
           cd scripts/linux
           sh add-libctest.sh
           cd ..
