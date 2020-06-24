@@ -8,46 +8,46 @@
 /libc-tests/libc-test/src/functional/clock_gettime.exe
 /libc-tests/libc-test/src/functional/clock_gettime-static.exe
 /libc-tests/libc-test/src/functional/crypt.exe
-/libc-tests/libc-test/src/functional/crypt-static.exe
-/libc-tests/libc-test/src/functional/dirname.exe
-/libc-tests/libc-test/src/functional/dirname-static.exe
-/libc-tests/libc-test/src/functional/dlopen.exe
-/libc-tests/libc-test/src/functional/env.exe
-/libc-tests/libc-test/src/functional/env-static.exe
-/libc-tests/libc-test/src/functional/fcntl.exe
-/libc-tests/libc-test/src/functional/fcntl-static.exe
-/libc-tests/libc-test/src/functional/fdopen.exe
-/libc-tests/libc-test/src/functional/fdopen-static.exe
-/libc-tests/libc-test/src/functional/fnmatch.exe
-/libc-tests/libc-test/src/functional/fnmatch-static.exe
-/libc-tests/libc-test/src/functional/fscanf.exe
-/libc-tests/libc-test/src/functional/fscanf-static.exe
-/libc-tests/libc-test/src/functional/fwscanf.exe
-/libc-tests/libc-test/src/functional/fwscanf-static.exe
-/libc-tests/libc-test/src/functional/iconv_open.exe
-/libc-tests/libc-test/src/functional/iconv_open-static.exe
-/libc-tests/libc-test/src/functional/inet_pton.exe
-/libc-tests/libc-test/src/functional/inet_pton-static.exe
-/libc-tests/libc-test/src/functional/ipc_msg.exe
-/libc-tests/libc-test/src/functional/ipc_msg-static.exe
-/libc-tests/libc-test/src/functional/ipc_sem.exe
-/libc-tests/libc-test/src/functional/ipc_sem-static.exe
-/libc-tests/libc-test/src/functional/ipc_shm.exe
-/libc-tests/libc-test/src/functional/ipc_shm-static.exe
-/libc-tests/libc-test/src/functional/mbc.exe
-/libc-tests/libc-test/src/functional/mbc-static.exe
-/libc-tests/libc-test/src/functional/memstream.exe
-/libc-tests/libc-test/src/functional/memstream-static.exe
-/libc-tests/libc-test/src/functional/popen.exe
-/libc-tests/libc-test/src/functional/popen-static.exe
-/libc-tests/libc-test/src/functional/pthread_cancel-points.exe
-/libc-tests/libc-test/src/functional/pthread_cancel-points-static.exe
-/libc-tests/libc-test/src/functional/pthread_cancel.exe
-/libc-tests/libc-test/src/functional/pthread_cancel-static.exe
-/libc-tests/libc-test/src/functional/pthread_cond.exe
-/libc-tests/libc-test/src/functional/pthread_cond-static.exe
-/libc-tests/libc-test/src/functional/pthread_mutex.exe
-/libc-tests/libc-test/src/functional/pthread_mutex-static.exe
+# /libc-tests/libc-test/src/functional/crypt-static.exe
+# /libc-tests/libc-test/src/functional/dirname.exe
+# /libc-tests/libc-test/src/functional/dirname-static.exe
+# /libc-tests/libc-test/src/functional/dlopen.exe
+# /libc-tests/libc-test/src/functional/env.exe
+# /libc-tests/libc-test/src/functional/env-static.exe
+# /libc-tests/libc-test/src/functional/fcntl.exe
+# /libc-tests/libc-test/src/functional/fcntl-static.exe
+# /libc-tests/libc-test/src/functional/fdopen.exe
+# /libc-tests/libc-test/src/functional/fdopen-static.exe
+# /libc-tests/libc-test/src/functional/fnmatch.exe
+# /libc-tests/libc-test/src/functional/fnmatch-static.exe
+# /libc-tests/libc-test/src/functional/fscanf.exe
+# /libc-tests/libc-test/src/functional/fscanf-static.exe
+# /libc-tests/libc-test/src/functional/fwscanf.exe
+# /libc-tests/libc-test/src/functional/fwscanf-static.exe
+# /libc-tests/libc-test/src/functional/iconv_open.exe
+# /libc-tests/libc-test/src/functional/iconv_open-static.exe
+# /libc-tests/libc-test/src/functional/inet_pton.exe
+# /libc-tests/libc-test/src/functional/inet_pton-static.exe
+# /libc-tests/libc-test/src/functional/ipc_msg.exe
+# /libc-tests/libc-test/src/functional/ipc_msg-static.exe
+# /libc-tests/libc-test/src/functional/ipc_sem.exe
+# /libc-tests/libc-test/src/functional/ipc_sem-static.exe
+# /libc-tests/libc-test/src/functional/ipc_shm.exe
+# /libc-tests/libc-test/src/functional/ipc_shm-static.exe
+# /libc-tests/libc-test/src/functional/mbc.exe
+# /libc-tests/libc-test/src/functional/mbc-static.exe
+# /libc-tests/libc-test/src/functional/memstream.exe
+# /libc-tests/libc-test/src/functional/memstream-static.exe
+# /libc-tests/libc-test/src/functional/popen.exe
+# /libc-tests/libc-test/src/functional/popen-static.exe
+# /libc-tests/libc-test/src/functional/pthread_cancel-points.exe
+# /libc-tests/libc-test/src/functional/pthread_cancel-points-static.exe
+# /libc-tests/libc-test/src/functional/pthread_cancel.exe
+# /libc-tests/libc-test/src/functional/pthread_cancel-static.exe
+# /libc-tests/libc-test/src/functional/pthread_cond.exe
+# /libc-tests/libc-test/src/functional/pthread_cond-static.exe
+# /libc-tests/libc-test/src/functional/pthread_mutex.exe
+# /libc-tests/libc-test/src/functional/pthread_mutex-static.exe
 # /libc-tests/libc-test/src/functional/pthread_mutex_pi.exe
 # /libc-tests/libc-test/src/functional/pthread_mutex_pi-static.exe
 # /libc-tests/libc-test/src/functional/pthread_robust.exe
