@@ -19,8 +19,8 @@ with open(RESULT_FILE, "w") as f:
         path = path[9:]
         print('testing', path, end='\t')
         try:
-            p = subprocess.run("cargo run --release -p linux-loader " + path,
-                    stdout=subprocess.PIPE,cwd="../",shell=True, timeout=TIMEOUT, check=True)
+            subprocess.run("cargo run --release -p linux-loader " + path,
+                    cwd="../",shell=True, timeout=TIMEOUT, check=True)
             f.writelines(str(index)+ " " + path[15:] + " PASS\n")
             f.flush()
             print('PASS')
