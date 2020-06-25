@@ -12,14 +12,23 @@ CHECK_FILE = BASE + 'test-check-passed.txt'
 
 # ==============================================
 
-for path in glob.glob("../rootfs/libc-test/src/*/*.exe"):
-    path = path[9:]
-    print('testing', path, end='\t')
-    try:
-        subprocess.run("cd .. && cargo run --release -p linux-loader " + path,
-                       shell=True, timeout=TIMEOUT, check=True)
-        print('PASS')
-    except subprocess.CalledProcessError:
-        print('FAILED')
-    except subprocess.TimeoutExpired:
-        print('TIMEOUT')
+with open(RESULT_FILE, "w") as f:
+    index = 0
+    for path in glob.glob("../rootfs/libc-test/src/*/*.exe"):
+        index += 1
+        path = path[9:]
+        print('testing', path, end='\t')
+        try:
+            p = subprocess.run("cargo run --release -p linux-loader " + path,
+                    stdout=subprocess.PIPE,cwd="../",shell=True, timeout=TIMEOUT, check=True)
+            f.writelines(str(index)+ " " + path[15:] + " PASS\n")
+            f.flush()
+            print('PASS')
+        except subprocess.CalledProcessError:
+            f.writelines(str(index)+ " " + path[15:] + " FAILED\n")
+            f.flush()
+            print('FAILED')
+        except subprocess.TimeoutExpired:
+            f.writelines(str(index)+ " " + path[15:] + " TIMEOUT\n")
+            f.flush()
+            print('TIMEOUT')
