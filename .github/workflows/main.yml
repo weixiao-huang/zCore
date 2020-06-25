@@ -139,7 +139,8 @@ jobs:
         run: make rootfs && make libc-test
       - name: Run libc-tests
         run: |
-          cargo build --release -p linux-loader
+          # cargo build --release -p linux-loader
+          make run
           cargo run --release -p linux-loader /libc-test/src/functional/argv.exe
           # cd scripts
           # python3 libc-tests.py
