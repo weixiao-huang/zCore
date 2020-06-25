@@ -139,7 +139,7 @@ jobs:
         run: make rootfs && make libc-test
       - name: Run libc-tests
         run: |
-          cd scripts
           cargo build --release -p linux-loader
+          cd scripts
           python3 libc-tests.py
           cat linux/test-result.txt
