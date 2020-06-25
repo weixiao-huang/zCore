@@ -128,42 +128,18 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - name: Checkout submodules
-        shell: bash
-        run: |
-          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
-          git submodule sync --recursive
-          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
       - uses: actions-rs/toolchain@v1
         with:
           profile: minimal
           toolchain: nightly-2020-06-04
           components: rust-src
-      - name: Prepare rootfs
+      - name: Install musl toolchain
+        run: sudo apt-get install musl-tools musl-dev -y
+      - name: Prepare rootfs and libc-test
+        run: make rootfs && make libc-test
+      - name: Run libc-tests
         run: |
-          pwd
-          make rootfs
-      - name: Prepare Requirement
-        run: |
-          sudo apt-get install musl-tools musl-dev -y
-      - name: Add libc-test
-        run: |
-          pwd
-          cd scripts/linux
-          pwd
-          sh add-libctest.sh
-          pwd
-          cd ..
-          pwd
-          cd ..
-          pwd
-      - name: Build libc-test
-        run: |
-          pwd
-          pip3 install pexpect
-          cargo run --release -p linux-loader /libc-tests/libc-test/src/functional/argv.exe
-      - name: Run libc-test
-        run: |
-          pwd
+          cd scripts
+          cargo build --release -p linux-loader
           python3 libc-tests.py
-          cat scripts/linux/test-result.txt
+          cat linux/test-result.txt
