@@ -252,17 +252,6 @@ impl Syscall<'_> {
         }
     }
 
-    pub fn sys_process_read(
-
-    ) -> ZxResult {
-        Ok(())
-    }
-
-    pub fn sys_process_write(
-
-    ) -> ZxResult {
-        Ok(())
-    }
 }
 
 const JOB_POL_BASE_V1: u32 = 0;

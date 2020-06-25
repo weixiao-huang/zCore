@@ -137,10 +137,14 @@ jobs:
         run: sudo apt-get install musl-tools musl-dev -y
       - name: Prepare rootfs and libc-test
         run: make rootfs && make libc-test
+      - name: Check ld
+        run: |
+          cd rootfs/libc-test/src/functional
+          objdump -x argv.exe
       - name: Run libc-tests
         run: |
           # cargo build --release -p linux-loader
-          make run
+          # make run
           cargo run --release -p linux-loader /libc-test/src/functional/argv.exe
           # cd scripts
           # python3 libc-tests.py
